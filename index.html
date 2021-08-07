@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10/10 APOTHECARY｜致力於每個人的質感生活提案</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .p15{
+        padding: 0px 15px;
+    }
+    .text-none{
+        text-decoration: none;
+    }
+    .m-15{
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .bold{
+        font-weight: bold;
+    }
+    .mb100{
+        margin-bottom: 100px
+    }
+    .mb40{
+        margin-bottom: 40px;
+    }
+    
+    .position-re{
+        position: relative;
+    }
+    /* -------------------------------- */
+    *{
+        box-sizing: border-box;
+    }
+    * {
+        font-family: "Open Sans", "Noto Sans TC", "Noto Sans SC", "Mitr", serif;
+    }
+    #top{
+        position: absolute;
+        top: 0;
+    }
+    .top-btn{
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        font-size: 22px;
+        font-weight: 100;
+        border:3px solid black;
+        text-align: center;
+        line-height:39px;
+        color: black;
+        position: fixed;
+        right: 33px;
+        bottom: 30px;
+        z-index: 10;
+    }
+    .top-btn a{
+        font-weight: 100;
+        color: black;
+        text-decoration: none;
+    }
+
+    .fb{
+        display: flex;
+        flex-direction: column-reverse;
+        position: absolute;
+        position: fixed;
+        right: 0;
+        top: 500px;
+        width: 45px;
+        height: 120px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 5px 0px 0px 5px; 
+        line-height: 30px;
+        text-align: center;
+        align-items: center;
+        transition: .3s;
+
+    }
+    .icon-m i{
+        color: white;
+        line-height: 30px;
+        font-size: 18px;
+    }
+    .text a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+    }
+    .text{
+        transform: rotate(-90deg);
+    }
+    .icon-m{
+        margin-top: 23px;
+        margin-bottom: 5px;
+    }
+    .fb:hover{
+        box-shadow:0px 0px 60px rgb(190, 190, 190); 
+        padding-right: 5px;
+        width: 53px;
+    }
+
+    .fixed{
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+
+    }
+    .hashtag-wrap{
+        margin-top: 140px;
+    }
+    @media (max-width:992px) {
+      .hashtag-wrap{
+        margin-top: 80px;
+      }
+      .fb{
+          display: none;
+      }
+      .top-btn{
+          display: none;
+      }
+    }
+    .dollar a{
+        color: black;
+        align-self: center;
+        text-decoration: none;
+    }
+    .logo-img{
+        max-width: 200px;
+        max-height: 100%;
+    }
+    .logo-img img{
+        max-height: 100%;
+        /* max-width 100% 爆版?? */
+        width: 100%;
+        object-fit: cover;
+    }
+    .row{
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* icon */
+    .icon{
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%; 
+        width: 100%;
+    }
+    .icon-wrap{
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+    }
+    .wrap a{
+        text-decoration: none;
+    }
+    .icon i{
+        font-size: 20px;
+        color: black;
+        padding: 8px;
+    }
+    .dollar, .logo-img, .icon{
+        width: 33.33%;
+    }
+    input{
+        border: 0px;
+        border-bottom: 1px solid rgb(199, 199, 199);
+        width: 0px;
+        transition: .5s;
+        padding: 0;
+        margin: 0 -2px 0 0;
+    }
+    .wrap-search{
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    .wrap-search:hover input{  
+        width: 100px;
+        padding: 0;
+    }
+    .bars{
+        height: 60px;
+        width: 60px;
+        background-color: rgb(247, 247, 247);
+        margin-left: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .bars i{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .container-fluid{
+        background-color: black;
+        padding:15px;
+    }
+    .container-fluid .row{
+        justify-content: center;
+    }
+    .items a{
+        text-decoration: none;
+        color: white;
+        padding: 0px 10px;
+    }
+    .hashtag a{
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0px 2px;
+        color: #337ab7;
+        opacity: 1;
+    }
+    .hashtag a:hover{
+        opacity: 0.8;
+    }
+    /*-------- banner------ */
+    .banner-wrap{
+        padding: 15px;
+    }
+    .banner-1{
+        margin-top: 20px;
+        position: relative;
+        padding: 15px;
+    }
+    .banner-1 img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .banner-mobile{
+        /* margin: 20px auto; */
+        padding: 15px;
+    }
+    
+    .banner-mobile img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .angle-left, .angle-right{
+        height: 40px;
+        width: 40px;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        color: rgba(255, 255, 255, 0.507);
+        bottom: 15px;
+        right: 15px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .angle-left{
+        right: 55px;
+    }
+    .angle-left:hover{
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+    .angle-right:hover{
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+    .page-btn{
+        height: 30px;
+        width: 80px;
+        background-color: rgba(95, 95, 95, 0.6);
+        position: absolute;
+        color: rgba(255, 255, 255, 0.623);
+        border-radius: 50px/50px;
+        bottom: 5px;
+        right: 20px;
+        text-align: center;
+        line-height: 30px;
+        margin: 0px 10px 8px 0px;
+    }
+
+    /* banner-2 */
+    .card{
+        padding: 15px;
+        border: none    ;
+    }
+   
+    .banner-2{
+        justify-content: space-between;
+    }
+    .card-left,
+    .card-right{
+        /* width: 50%; */
+        position: relative;
+    }
+    .card-left img,
+    .card-right img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 15px;
+    }
+    /* --------------------------------- */
+    .title{ 
+        text-align: center;
+        font-size: 24px;
+        font-weight: 580;
+        margin: 30px 0px;
+    }
+    /* 新品上市 */
+    .product{
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .product-img{
+        height: 260px;
+        max-width: 260px;
+        position: relative;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+    }
+    .product-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+    .product-card{
+        padding: 8px;
+        text-align: center;
+    }
+    .product-info{
+        margin: 20px 10px;
+    }
+
+    .name, .price, .rev-price{
+        /* width: 90%;     */
+        font-size: 13px;
+        margin-bottom: 3px;
+        font-weight: 300;
+    }
+    .rev-price{
+        text-decoration: line-through 1px solid rgb(153, 153, 153);
+        color: rgb(153, 153, 153);
+    }
+    .cart-logo{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        text-align: center;
+        line-height: 40px;
+        box-shadow: 1px 1px 3px rgb(161, 161, 161);
+        transition: .5s;
+        opacity: 0;
+        background-color: white;
+    }
+    .product-img:hover .cart-logo{
+        opacity: 1;
+    }
+    .product-img:hover .change{
+        opacity: 1;
+    }
+    .change{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: .5s;
+    }
+    .page-row{
+        justify-content: center;
+        margin: 40px 0px 100px 0px;
+    }
+    .page{
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-color: rgba(192, 192, 192, 0);
+        text-align: center;
+        line-height: 28px;
+        margin: 0 3px;
+    }
+    .page a{
+        text-decoration: none;
+        color: black;
+    }
+    .page-first{
+        background-color: black;
+        color: white;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 28px;
+        margin: 0 3px;
+        text-decoration: none;
+    }
+    .page-first a{
+        text-decoration: none;
+        color:white;
+    }
+    .page:hover {
+        background-color: rgba(192, 192, 192, 0.404);
+    }
+    /* 文章區 */
+    .article-wrap{
+        margin-bottom: 25px;
+    }
+    .article-card{
+        width: 100%;
+        /* margin-bottom: 20px; */
+    }    
+    .article-card img{
+        width:100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .article-info{
+        text-align: center;
+    }
+    .article-info p{
+        padding: 0 5px;
+        letter-spacing: 1.5px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+  
+    .article-info a{
+        text-decoration: none;
+        letter-spacing: 5px;
+        color:#3379b7;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .article-info a:hover{
+        color: #104a7c;
+    }
+    .ig{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .footer{
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding: 15px;
+        border-top: 1px solid grey;
+        padding-top: 50px;
+        margin-top: 100px;
+        text-align: center;
+    }
+    .footer h1{
+        font-size: 22px;
+        padding-bottom: 10px;
+    }
+    .footer .info{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+    .info a{
+        color: black;
+        text-decoration: none;
+    }
+    .footer p{
+        font-size: 14px;
+    }
+    .brand,.about-us,.policy, .contact-us{
+        margin-bottom: 40px;
+    }
+
+</style>
+<body>
+    <!-- top btn -->
+    <div id="top"></div>
+    <div class="top-btn">
+        <a href="#top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+    <!-- 側邊btn -->
+    <div class="fb">
+        <div class="icon-m">
+            <a href="">
+                <i class="fas fa-comment-alt"></i>
+            </a>
+        </div>
+        <div class="text">
+            <a href="">Feedback</a>
+        </div>
+    </div>
+    <div class="mb100 fixed" >
+        <!-- TOP header -->
+        <div class="container">
+            <div class="row d-flex navbar-expand-xl">
+                <!-- dollar -->
+                <div class="dollar d-none d-lg-block">
+                    <a href="">
+                        <span>$TWD</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                </div>
+                <!-- Logo -->
+                <div class="logo-img">
+                    <a href="#">
+                        <img src="./img/logo-3.jpg" alt="">
+                    </a>
+                </div>
+                <!-- icon -->
+                <div class="icon d-flex">
+                    <div class="icon-wrap d-flex">
+                        <div class="wrap">
+                          <a href="">
+                            <i class="fas fa-shopping-bag"></i>
+                          </a>
+                        </div>
+                        <div class="wrap">
+                          <a href="">
+                            <i class="far fa-user"></i>
+                          </a>
+                        </div>
+                        <!-- input -->
+                        <div class="wrap-search d-flex">
+                            <a class="search" href="">
+                              <i class="fas fa-search search"></i>
+                            </a>
+                            <div class="wrap input">
+                                <input class="d-none d-lg-block" type="text"size="10" maxlength="100" placeholder="找商品">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="wrap ">
+                          <a href=""><i class="far fa-comment d-none d-xl-block text-none"></i></a>
+                        </div>
+                    </div>
+                    <div class="bars d-flex d-lg-none d-block">
+                        <a href=""><i class="fas fa-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header類別 -->
+        <div class="container-fluid d-none d-lg-block">
+            <div class="row d-flex">
+                <div class="items">
+                    <a href="">新品上市</a>
+                    <a href="">
+                        <span>宅家愛自己</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>代理品牌一覽</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>臉部</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>身體</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>髮品</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>個人香氛</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>室內香氛</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>居家生活</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>彩妝</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>悠然盛夏</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <a href="">
+                        <span>十分美學誌</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <!-- Hashtag -->
+        <div class="container-fluid hashtag-wrap" >
+            <div class="row hashtag">
+                <a href="">
+                    <span>#髮肌淨化專區X指定專區2件88折</span>
+                </a>
+                <a href="">
+                    <span>#夏日香氛沐浴</span>
+                </a>
+                <a href="">
+                    <span>#居家空間香氛指南</span>
+                </a>
+                <a href="">
+                    <span>#絕版明星商品趁免運囤起來</span>
+                </a>
+
+            </div>
+        </div>
+        <!-- banner-1 -->
+        <div class="container banner-1 d-none d-md-block">
+            <div class="row p15">
+                <img src="./img/banner-1.jpg" alt="">
+                <div class="angle-left">
+                    <i class="fas fa-angle-left"></i>
+                </div>
+                <div class="angle-right">
+                    <i class="fas fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="container banner-mobile d-block d-md-none">
+            <div class="row position-re p15">
+                <img src="./img/banner-1-mobile.jpg" alt="">
+                <div class="page-btn">
+                    1/13
+                </div>
+            </div>
+        </div>
+        
+        <!-- banner-2 -->
+        <div class="container">
+            <div class="row">
+                <div class="card col-12 col-md-6">
+                    <img src="./img/2nd-1.jpg" alt="">
+                    <div class="angle-left">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <div class="angle-right">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-6">
+                    <img src="./img/2nd-1-2.jpg" alt="">
+                    <div class="angle-left">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <div class="angle-right">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 新品上市 -->
+        <div class="title">
+            <span>新品上市</span>
+        </div>
+        <div class="container">
+            <div class="row product">
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img">
+                        <a href="">
+                            <img src="./img/新品上市/new 1-1.jpg" alt="">
+                            <img class="change"src="./img/新品上市/new-1.jpg" alt="">
+                        </a>
+
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">BYREDO 限量返樸歸真淡香精</div>
+                        <div class="price">NT$7,600</div>
+                    </div>
+                </div>
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img">
+                        <a href="">
+                            <img src="./img/新品上市/new-2.png" alt="">
+                        </a>
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">10/10 APOTHECARY 十分好物禮盒 – 清新一夏 偽渡假組</div>
+                        <div class="price bold">NT$1,980</div>
+                        <div class="rev-price">NT$3,420</div>
+                    </div>
+                </div>
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img">
+                        <a href="">
+                            <img src="./img/新品上市/new-3.jpg" alt="">
+                        </a>
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">BYREDO 吉普賽之水護手霜</div>
+                        <div class="price">NT$1,250</div>
+                    </div>
+                </div>
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img position-re">
+                        <a href="">
+                            <img src="./img/新品上市/new-img-4.png">
+                            <img class="change" src="./img/新品上市/new-img-4-1.png">
+                        </a>
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">diptyque 2021限量暖陽淡香水</div>
+                        <div class="price">NT$4,300</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 頁數 -->
+        <div class="row page-row">
+            <div class="page-first">
+                <a href="">1</a>
+            </div>
+            <div class="page">
+                <a href="">2</a>
+            </div>
+            <div class="page">
+                <a href="">3</a>
+            </div>
+            <div class="page">
+                <a href="">4</a>
+            </div>
+            <div class="page">
+                <a href="">5</a>
+            </div>
+            <div class="page">
+                <a href="">
+                    <i class="fas fa-angle-double-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- 新品上市 -->
+        <div class="title">
+            <span>熱銷推薦</span>
+        </div>
+        <div class="container">
+            <div class="row product">
+                <!-- 1st -->
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img">
+                        <a href="">
+                            <img src="./img/新品上市/new-2.png" alt="">
+                        </a>
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">10/10 APOTHECARY 十分好物禮盒 – 清新一夏 偽渡假組</div>
+                        <div class="price bold">NT$1,980</div>
+                        <div class="rev-price">NT$3,420</div>
+                    </div>
+                </div>
+                <!-- 2nd -->
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img position-re">
+                        <a href="">
+                            <img src="./img/熱銷/hot-2.jpg">
+                            <img class="change" src="./img/熱銷/hot-2-1.jpg">
+                        </a>
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">EVE LOM 2021 新客體驗組</div>
+                        <div class="price">NT$2,880</div>
+                        <div class="rev-price">NT$3,400</div>
+                    </div>
+                </div>
+                <!-- 3rd -->
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img position-re">
+                        <a href="">
+                            <img src="./img/熱銷/hot-3.png">
+                        </a>
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">diptyque 2021限量檸檬草香氛蠟燭</div>
+                        <div class="price">NT$2,300</div>
+                    </div>
+                </div>
+                <!-- 4th -->
+                <div class="product-card col-6 col-md-6 col-lg-3">
+                    <div class="product-img">
+                        <a href="">
+                            <img src="./img/熱銷/hot-4.jpg" alt="">
+                        </a>
+                        <div class="cart-logo">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="name">diptyque 感官之水髮香噴霧</div>
+                        <div class="price bold">NT$1,850</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 頁數 -->
+        <div class="row page-row">
+            <div class="page-first">
+                <a href="">1</a>
+            </div>
+            <div class="page">
+                <a href="">2</a>
+            </div>
+            <div class="page">
+                <a href="">3</a>
+            </div>
+            <div class="page">
+                <a href="">4</a>
+            </div>
+            <div class="page">
+                <a href="">5</a>
+            </div>
+            <div class="page">
+                <a href="">
+                    <i class="fas fa-angle-double-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="title">
+            <span>美學指南</span>
+        </div>
+        <div class="container">
+            <div class="row article">
+                <!-- 1st -->
+                <div class="article-wrap col-md-12 col-lg-3">
+                    <div class="article-card">
+                        <img src="./img/4th-1.jpg" alt="">
+                    </div>
+                    <div class="article-info">
+                        <p>關於你的十分乾洗手：如何挑選乾洗手？噴了太乾燥？ 疫情4個清潔小物</p>
+                        <a href="">(點我繼續閱讀)</a>
+                    </div>
+                </div>
+                <!-- 2nd -->
+                <div class="article-wrap col-md-12 col-lg-3">
+                    <div class="article-card">
+                        <img src="./img/4th-2.jpg" alt="">
+                    </div>
+                    <div class="article-info">
+                        <p>Rose Ritual:從頭到腳12個內行人私藏玫瑰香保養，療癒儀式從這開始</p>
+                        <a href="">(點我繼續閱讀)</a>
+                    </div>
+                </div>
+                <!-- 3rd -->
+                <div class="article-wrap col-md-12 col-lg-3">
+                    <div class="article-card">
+                        <img src="./img/4th-3.jpg" alt="">
+                    </div>
+                    <div class="article-info">
+                        <p>【Work From Home 居家辦公美學指南】打造儀式感，提升效率4 Tips</p>
+                        <a href="">(點我繼續閱讀)</a>
+                    </div>
+                </div>
+                <!-- 4th -->
+                <div class="article-wrap col-md-12 col-lg-3">
+                    <div class="article-card">
+                        <img src="./img/4th-4.jpg" alt="">
+                    </div>
+                    <div class="article-info">
+                        <p>【10/10 居家擴香指南】：4個不同場所最適芬芳，打造專屬的城市綠洲</p>
+                        <a href="">(點我繼續閱讀)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            <span class="ig" ># FOllOW US ON INSTAGRAM</span>
+        </div>
+    
+    <!-- footer -->
+    <div class="container">
+        <footer class="row footer">
+            <div class="brand col-12 col-lg-3">
+                <h1 class="mb40">10/10 APOTHECARY</h1>
+                <p>誕生於2010年，以 10/10 追求完美的態度，提供 100% 精緻的選擇。從世界各地精選與我們理念相同的品牌與產品，致力於與大家分享質感生活的美學。將「最好的」美妝、保養、居家生活用品帶入這個商店。</p>
+            </div>
+            <div class="about-us col-12 col-lg-3">
+                <h1>ABOUT US</h1>
+                <div class="info"><a href="">品牌故事</a></div>
+                <div class="info"><a href="">銷售據點</a></div>
+                <div class="info"><a href="">療程服務</a></div>
+            </div>
+            <div class="policy col-12 col-lg-3">
+                <h1>POLICY</h1>
+                <div class="info"><a href="">10/10 FRIENDS會員計畫</a></div>
+                <div class="info"><a href="">會員權益</a></div>
+                <div class="info"><a href="">隱私權說明</a></div>
+                <div class="info"><a href="">運送說明</a></div>
+                <div class="info"><a href="">付款說明</a></div>
+                <div class="info"><a href="">退換貨政策說明</a></div>
+            </div>
+            <div class="contact-us col-12 col-lg-3">
+                <h1>CONTACT US</h1>
+                <p>客服專線 : 0800-08-1010</p>
+                <p>客服時間 : 12:00 pm - 08:00 pm</p>
+                <p>線上商品：請點右上角對話圖示留言。</p>
+                <p>訂單相關：請至該筆訂單中發送訊息。</p>
+                <p>其他問題請來信 :</p>
+                <p>service@1010apothecary.com.tw</p>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR  +jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
